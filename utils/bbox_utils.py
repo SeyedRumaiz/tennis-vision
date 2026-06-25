@@ -65,8 +65,7 @@ def measure_distance(p1, p2):
                  = 5
     """
 
-    return ((p1[0] - p2[0]) ** 2 +
-            (p1[1] - p2[1]) ** 2) ** 0.5
+    return ((p1[0] - p2[0]) ** 2 + (p1[1] - p2[1]) ** 2) ** 0.5
 
 
 def get_foot_position(bbox):
@@ -151,7 +150,7 @@ def get_closest_keypoint_index(point, keypoints, keypoint_indices):
     """
 
     # Start with infinity so that any real distance is smaller
-    closest_distance = float('inf')
+    closest_distance = float("inf")
 
     # Assume first candidate is the closest initially
     closest_keypoint_index = keypoint_indices[0]
@@ -159,10 +158,7 @@ def get_closest_keypoint_index(point, keypoints, keypoint_indices):
     for keypoint_index in keypoint_indices:
 
         # Extract x and y coordinates of current keypoint
-        keypoint = (
-            keypoints[keypoint_index * 2],
-            keypoints[keypoint_index * 2 + 1]
-        )
+        keypoint = (keypoints[keypoint_index * 2], keypoints[keypoint_index * 2 + 1])
 
         # Compare only vertical distance
         distance = abs(point[1] - keypoint[1])
