@@ -1,8 +1,8 @@
 
-# Tennis Analysis
+# Tennis Vision
 
 ## Overview
-`tennis_analysis` is a computer vision pipeline for tennis match analytics. It processes video input to detect players and the ball, estimate court keypoints, compute shot and movement statistics, and generate annotated output video.
+`Tennis Vision` is a computer vision pipeline for tennis match analytics. It processes video input to detect players and the ball, estimate court keypoints, compute shot and movement statistics, and generate annotated output video.
 
 This repository is designed for rapid experimentation with sports analytics using YOLO-based detection, tracking, and court coordinate conversion.
 
@@ -13,6 +13,11 @@ This repository is designed for rapid experimentation with sports analytics usin
 * Mini-court coordinate mapping for player and ball trajectories
 * Shot segmentation, ball speed estimation, and player movement statistics
 * Annotated output video with court overlays, bounding boxes, and performance metrics
+
+## Architecture
+The diagram below illustrates the core pipeline: video input is analyzed by player and ball trackers, court keypoints are estimated from the first frame, and all detections are mapped into a mini-court coordinate space for shot and movement analysis.
+
+![Architecture Diagram](resources/architecture.png)
 
 ## Screenshot
 ![Screenshot](output_videos/screenshot.jpeg)
