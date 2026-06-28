@@ -108,9 +108,9 @@ def save_video(output_video_frames, output_video_path):
 
     # Create video writer object
     out = cv2.VideoWriter(
-        output_video_path,                 # Output file location
-        fourcc,                            # Video codec
-        24,                                # Frames per second
+        output_video_path,  # Output file location
+        fourcc,  # Video codec
+        24,  # Frames per second
         (
             output_video_frames[0].shape[1],  # Width
             output_video_frames[0].shape[0],  # Height

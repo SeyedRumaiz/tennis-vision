@@ -84,13 +84,7 @@ def draw_player_stats(output_video_frames, player_stats):
         overlay = frame.copy()
 
         # Draw a filled black rectangle
-        cv2.rectangle(
-            overlay,
-            (start_x, start_y),
-            (end_x, end_y),
-            (0, 0, 0),
-            -1
-        )
+        cv2.rectangle(overlay, (start_x, start_y), (end_x, end_y), (0, 0, 0), -1)
 
         # Transparency factor
         # 0.0 -> invisible
@@ -98,14 +92,7 @@ def draw_player_stats(output_video_frames, player_stats):
         alpha = 0.5
 
         # Blend overlay and original frame
-        cv2.addWeighted(
-            overlay,
-            alpha,
-            frame,
-            1 - alpha,
-            0,
-            frame
-        )
+        cv2.addWeighted(overlay, alpha, frame, 1 - alpha, 0, frame)
 
         output_video_frames[index] = frame
 
@@ -137,10 +124,7 @@ def draw_player_stats(output_video_frames, player_stats):
             1,
         )
 
-        text = (
-            f"{player_1_shot_speed:.1f} km/h    "
-            f"{player_2_shot_speed:.1f} km/h"
-        )
+        text = f"{player_1_shot_speed:.1f} km/h    " f"{player_2_shot_speed:.1f} km/h"
 
         output_video_frames[index] = cv2.putText(
             output_video_frames[index],
@@ -166,10 +150,7 @@ def draw_player_stats(output_video_frames, player_stats):
             1,
         )
 
-        text = (
-            f"{player_1_speed:.1f} km/h    "
-            f"{player_2_speed:.1f} km/h"
-        )
+        text = f"{player_1_speed:.1f} km/h    " f"{player_2_speed:.1f} km/h"
 
         output_video_frames[index] = cv2.putText(
             output_video_frames[index],
@@ -224,10 +205,7 @@ def draw_player_stats(output_video_frames, player_stats):
             1,
         )
 
-        text = (
-            f"{avg_player_1_speed:.1f} km/h    "
-            f"{avg_player_2_speed:.1f} km/h"
-        )
+        text = f"{avg_player_1_speed:.1f} km/h    " f"{avg_player_2_speed:.1f} km/h"
 
         output_video_frames[index] = cv2.putText(
             output_video_frames[index],
